@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <h1 id="my-name"></h1>
+  <body>
+    <script>
+      //Question 1,2
+      const myName = "Robiul Sk";
+      document.getElementById("my-name").innerText = myName;
+      //Question 3
+      const GSTpercentage = 18;
+      const cartValue = Math.round(
+        ((15599 -
+          (10 / 100) * 15599 -
+          272 +
+          (2499 - (41 / 100) * 2499) -
+          29 +
+          25 +
+          20) *
+          (100 + GSTpercentage)) /
+          100
+      );
+      console.log(`Your final Myntra Bag amount is ₹${cartValue}`);
+      //Question 4
+      const calculatedNumber = eval(4 + 5 * 10 - 4 / 2);
+      console.log(calculatedNumber);
+    </script>
+  </body>
+</html>
