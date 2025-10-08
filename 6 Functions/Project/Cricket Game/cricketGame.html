@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Game</title>
+</head>
+<body>
+    <h1> BAT BALL STUMP</h1>
+    <button onclick = "
+    let userMove = 'BAT';
+    let computerMove = generateComputerChoice();
+    let result = getResult(userMove , computerMove);
+    showResult(userMove , computerMove , result);">
+    BAT</button>
+
+    <button onclick = "
+    let userMove1 = 'BALL';
+    let computerMove1 = generateComputerChoice();
+    let result1 = getResult(userMove1 , computerMove1);
+    showResult(userMove1 , computerMove1 , result1);">
+    BALL
+    </button>
+
+    <button onclick = "
+    let userMove2 = 'STUMP';
+    let computerMove2 = generateComputerChoice();
+    let result2 = getResult(userMove2 , computerMove2);
+    showResult(userMove2 , computerMove2 , result2); 
+    ">STUMP</button>
+    <script>
+        function generateComputerChoice(){
+            let computerChoice = Math.random() * 3;
+            if(computerChoice < 1){
+                return "BAT";
+            }else if(computerChoice < 2){
+                return "BALL";
+            }
+            else{
+                return "STUMP";
+            }
+            }
+        function getResult(userMove , computerMove){
+            if(userMove === 'BAT'){
+                if(computerMove === 'BALL'){
+                    return 'You Win';
+                }else if(computerMove === 'BAT'){
+                    return 'Match Draw';
+                }else{
+                    return 'You Lose';
+                }
+            }
+            if(userMove === 'BALL'){
+                if(computerMove === 'BAT'){
+                    return 'You Lose';
+                }else if(computerMove === 'BALL'){
+                    return 'Match Draw';
+                }else{
+                    return 'You Win';
+                }
+            }
+            if(userMove === 'STUMP'){
+                if(computerMove === 'BAT'){
+                    return 'You win';
+                }else if(computerMove === 'STUMP'){
+                    return 'Match Draw';
+                }else {
+                    return 'You Lose';
+                }
+            }
+        }
+        function showResult(userMove , computerMove , result){
+            alert(`Your Move is: ${userMove} \n Computer Move is: ${computerMove} \n Result is: ${result}`);
+        }
+    </script>
+</body>
+</html>
