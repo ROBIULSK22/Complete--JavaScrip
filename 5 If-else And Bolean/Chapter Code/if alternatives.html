@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>If Alternatives</title>
+  </head>
+  <body>
+    <script>
+      // Normal if-else
+      console.log("Using Normal if-else");
+      let age = 17;
+      let result;
+      if (age > 18) {
+        result = "Adult";
+      } else {
+        result = "kid";
+      }
+      console.log(result);
+      // Ternary Operator
+      console.log("Using Ternary Operator");
+      age = 19;
+      result = age > 18 ? "Adult" : "kid";
+      console.log(result);
+      // Guard Operator
+      console.log("Guard Operator");
+      let age2 = 22;
+      let finalAge = age2 || 18;
+      console.log(age2);
+      console.log(finalAge);
+      // Default Operator
+      console.log("Default Operator");
+      let age3;
+      let finalAge2 = age3 ?? 18;
+      console.log(age3);
+      console.log(finalAge2);
+    </script>
+  </body>
+</html>

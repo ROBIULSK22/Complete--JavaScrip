@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log(typeof (9 > 10)); // true
+      console.log(typeof (9 < 10)); // false
+      console.log(typeof true); // boolean
+
+      console.log(5 == 5); // true
+      console.log(5 == "5"); // true
+      console.log(5 === "5"); // false
+      console.log(4 === 4.0); // true
+      console.log("checking if you can drive or not");
+      let age = 21;
+      if (age > 65) {
+        console.log("please ask someone to drive you");
+      } else if (age > 18) {
+        console.log("you can drive");
+      } else {
+        console.log("Use a Bicycle");
+      }
+      age = 17;
+      if (age > 18) console.log("you can drive");
+      else console.log("Use a Bicycle");
+    </script>
+  </body>
+</html>

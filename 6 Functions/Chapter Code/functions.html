@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functions</title>
+  </head>
+  <body>
+    <script>
+      // Age Print Function
+      console.log("Age Print Function");
+      let age1 = 22;
+      function printAge(){
+          console.log("Your age is " + age1);
+      }
+      printAge();
+      age = 23;
+      printAge();
+      age = 24;
+      printAge();
+      //  Random Number Generation
+      console.log("Random Number Generation");
+      function generateRandomeNumber (){
+          let randomNumber = Math.random();
+        let ranNumber = randomNumber * 100;
+          return ranNumber;
+      }
+      let randomeNumber = generateRandomeNumber();
+      console.log(randomeNumber);
+      randomeNumber = generateRandomeNumber();
+      console.log(randomeNumber);
+      randomeNumber = generateRandomeNumber();
+      console.log(randomeNumber);
+      // Function Determine Drive Status
+      console.log("Function Determine Drive Status");
+      function determineDriveStatus(age){
+
+          let age3 = 34;
+          if (age3 === undefined){
+              console.log("Please provide your age");
+               return 'kay up avter hain?';
+          }
+          console.log("Checking Drive Status");
+          if(age3 > 18){
+                return "You can drive";
+            }
+            else{
+                return "You cannot drive";  
+          }
+          
+      }
+      console.log(determineDriveStatus());
+      // sum of two numbers
+      function sum(a, b){
+          return a + b;
+      }
+        console.log(sum(3, 4));
+        console.log(sum(10, 20));
+        console.log(sum(-3, 4));
+        // Default Parameters
+        console.log("Default Parameters");
+        function greeting(name = "Dear"){
+            return `good moring ${name}`;
+        }
+        console.log(greeting("Ali"));
+        console.log(greeting());
+        console.log(greeting(undefined));
+        console.log(greeting(null));
+        
+    </script>
+  </body>
+</html>
