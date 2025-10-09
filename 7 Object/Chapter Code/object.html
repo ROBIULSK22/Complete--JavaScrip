@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objects</title>
+  </head>
+  <body>
+    <script>
+      // Creating an object using object literal syntax
+      let product = {
+        name: "Hp-Pavilion",
+        price: 70000,
+        brand: "HP",
+        color: "Black",
+        category: "Laptop",
+        "is-available": true,
+      };
+      // Accessing Object Properties
+      console.log("Accessing Object Properties:");
+      console.log(product);
+      // Dot Notation
+      console.log("Accessing using Dot Notation");
+      console.log(product.name);
+      // Bracket Notation
+      console.log("Accessing using Bracket Notation");
+      console.log(product["is-available"]);
+      // Inside Object
+      console.log("Inside Object");
+      let product2 = {
+        name: "Hp-Pavilion",
+        price: 70000,
+        brand: "HP",
+        color: "Black",
+        category: "Laptop",
+        "is-available": true,
+        rating: {
+          count: 1000,
+          rate: 4.5,
+        },
+        details: function () {
+          console.log(
+            `The product name is ${this.name} and the price is ${this.price}`
+          );
+        },
+      };
+      // Accessing Nested Object Properties
+      console.log("Accessing Nested Object Properties");
+      console.log(product2.rating.count);
+      // Calling Object Method
+      console.log("Calling Object Method");
+      product2.details();
+    </script>
+  </body>
+</html>
