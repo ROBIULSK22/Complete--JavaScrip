@@ -9,7 +9,7 @@
   <body>
     <h1>BAT BALL STUMP</h1>
     <h1 id="result"></h1>
-    <h2 id="Score-Board">Score Board</h2>
+    <h2 id="Score-Board"></h2>
     <div id="game-buttons">
       <div>
         <img src="Image/bat.png" alt="bat" />
@@ -56,7 +56,7 @@
         displayMatchResult: function () {
           document.getElementById(
             "Score-Board"
-          ).innerText = `Score Board : Wins - ${this.Wins} , Draws - ${this.Draws} , Losses - ${this.Losses}`;
+          ).innerText = `Score Board:\nWins-${this.Wins},\nDraws-${this.Draws},\nLosses-${this.Losses}`;
         },
       };
       function generateComputerChoice() {

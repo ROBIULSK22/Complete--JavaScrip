@@ -50,6 +50,155 @@
       // Calling Object Method
       console.log("Calling Object Method");
       product2.details();
+      // Autoboxing
+      console.log("Autoboxing");
+      let message = "Hello World";
+      console.log(message.toUpperCase());
+      console.log(message.length);
+      console.log(message.indexOf("W"));
+      // Object Reference
+      console.log("Object Reference");
+      let product3 = {
+        name: "Hp-Pavilion",
+        price: 70000,
+        brand: "HP",
+        color: "Black",
+        category: "Laptop",
+        "is-available": true,
+      };
+      let product4 = product3;
+      product4.price = 65000;
+      console.log(product3.price); // 65000
+      console.log(product4.price); // 65000
+      // Cloning an Object
+      console.log("Cloning an Object");
+      let product5 = {
+        name: "Hp-Pavilion",
+        price: 70000,
+        brand: "HP",
+        color: "Black",
+        category: "Laptop",
+        "is-available": true,
+      };
+      // Using Object.assign()
+      let product6 = Object.assign({}, product5);
+      product6.price = 60000;
+      console.log(product5.price); // 70000
+      console.log(product6.price); // 60000
+      // Using Spread Operator
+      let product7 = { ...product5 };
+      product7.price = 55000;
+      console.log(product5.price); // 70000
+      console.log(product7.price); // 55000
+      // Using JSON methods
+      let product8 = JSON.parse(JSON.stringify(product5));
+      product8.price = 50000;
+      console.log(product5.price); // 70000
+      console.log(product8.price); // 50000
+      // Object Methods
+      console.log("Object Methods");
+      let product9 = {
+        name: "Hp-Pavilion",
+        price: 70000,
+        brand: "HP",
+        color: "Black",
+        category: "Laptop",
+        "is-available": true,
+      };
+      console.log("Object.keys():", Object.keys(product9));
+      console.log("Object.values():", Object.values(product9));
+      console.log("Object.entries():", Object.entries(product9));
+      console.log(
+        "Object.hasOwnProperty('price'):",
+        product9.hasOwnProperty("price")
+      );
+      console.log(
+        "Object.hasOwnProperty('discount'):",
+        product9.hasOwnProperty("discount")
+      );
+      console.log("Object.is():", Object.is(product9, product9));
+      console.log(
+        "Object.is() with two different objects:",
+        Object.is(product9, product5)
+      );
+      console.log("Object.freeze():");
+      Object.freeze(product9);
+      product9.price = 60000; // This will not change the price
+      console.log(product9.price); // 70000
+      console.log("Object.seal():");
+      let product10 = {
+        name: "Hp-Pavilion",
+        price: 70000,
+        brand: "HP",
+        color: "Black",
+        category: "Laptop",
+        "is-available": true,
+      };
+      Object.seal(product10);
+      product10.price = 65000; // This will change the price
+      
+      product10.discount = 10; // This will not add a new property
+      console.log(product10.price); // 65000
+      console.log(product10.discount); // undefined
+      console.log("Object.preventExtensions():");
+      let product11 = {
+        name: "Hp-Pavilion",
+        price: 70000,
+        brand: "HP",
+        color: "Black",
+        category: "Laptop",
+        "is-available": true,
+      };
+
+
+      Object.preventExtensions(product11);
+      product11.price = 65000; // This will change the price
+      product11.discount = 10; // This will not add a new property
+      console.log(product11.price); // 65000
+      console.log(product11.discount); // undefined
+      // Destructuring
+      console.log("Destructuring");
+      let product12 = {
+        name: "Hp-Pavilion",
+        price: 70000,
+        brand: "HP",
+        color: "Black",
+        category: "Laptop",
+        "is-available": true,
+      };
+      let { name, price , brand } = product;
+      console.log(name); // Hp-Pavilion
+      console.log(price); // 70000
+      console.log(brand); // HP
+      // Destructuring with new variable names
+      let { name: productName, price: productPrice } = product;       
+      console.log(productName); // Hp-Pavilion
+      console.log(productPrice); // 70000
+      // Destructuring with default values
+      let { discount = 0 } = product;
+      console.log(discount); // 0
+      // Nested Object Destructuring
+      let product13 = {
+        name: "Hp-Pavilion",
+        price: 70000,
+        brand: "HP",
+        color: "Black",
+        category: "Laptop",
+        "is-available": true,
+        rating: {
+          count: 1000,
+          rate: 4.5,
+        },
+      };
+      let {
+        rating: { count, rate },
+      } = product13;
+      console.log(count); // 1000
+      console.log(rate); // 4.5
+      // Function Parameter Destructuring
+
+
+      
     </script>
   </body>
 </html>
