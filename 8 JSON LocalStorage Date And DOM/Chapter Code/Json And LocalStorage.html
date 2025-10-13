@@ -6,6 +6,33 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <script>
+        let product = {
+            name: "Laptop",
+            price: 30000,
+            brand: "HP",
+            color: "Silver"
+        };
+        //printing the object and its type
+        console.log(product);
+        console.log(typeof product);
+        //converting the object into JSON string and printing it and its type
+        let productJson = JSON.stringify(product);
+        console.log(productJson);
+        console.log(typeof productJson);
+        //converting the JSON string back to object and printing it and its type
+        let productobj = JSON.parse(productJson);
+        console.log(productobj);
+        console.log(typeof productobj);
+        //storing the JSON string in local storage
+        localStorage.setItem("productDetails", productJson);
+        //getting the JSON string from local storage
+        let productString = localStorage.getItem("productDetails");
+        console.log(productString);
+        console.log(typeof productString);
+        //converting the JSON string back to object and printing it and its type
+        let productObj = JSON.parse(productString);
+        console.log(productObj);
+    </script>
 </body>
 </html>
