@@ -4,62 +4,78 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cricket Game</title>
-    <link rel = "stylesheet" href = "../../Styles/style.css"
+    <link rel = "stylesheet" href = "style.css"
   </head>
   <body>
     <h1>BAT BALL STUMP</h1>
     <h1 id="result"></h1>
     <h2 id="Score-Board"></h2>
-    <div id="game-buttons">
-      <div>
-        <img src="Image/bat.png" alt="bat" />
-        <button
-          onclick="
+
+    <button
+      class="choice-button"
+      onclick="
             let userMove = 'BAT';
             let computerMove = generateComputerChoice();
             let result = getResult(userMove , computerMove);
             showResult(userMove , computerMove , result);
-        ">
-          BAT
-        </button>
-      </div>
-      <div>
-        <img src="Image/ball.png" alt="ball" />
-        <button
-          onclick="
+        "
+    >
+      <img src="Image/bat.png" alt="bat-image" class="choice-image" />
+    </button>
+
+    <button
+      class="choice-button"
+      onclick="
             let userMove1 = 'BALL';
             let computerMove1 = generateComputerChoice();
             let result1 = getResult(userMove1 ,         computerMove1);
             showResult(userMove1 , computerMove1 , result1);
-        ">
-          BALL
-        </button>
-      </div>
-      <div>
-        <img src="Image/stump.png" alt="stump" />
-        <button
-          onclick="
+        "
+    >
+      <img src="Image/ball.png" alt="ball-image" class="choice-image" />
+    </button>
+
+    <button
+      class="choice-button"
+      onclick="
             let userMove2 = 'STUMP';
             let computerMove2 = generateComputerChoice();
             let result2 = getResult(userMove2 ,         computerMove2);
             showResult(userMove2 , computerMove2 , result2); 
-        ">
-          STUMP
-        </button>
-      </div>
-    </div>
+        "
+    >
+      <img src="Image/stump.png" alt="stum-image" class="choice-image" />
+    </button>
+    <button
+      onclick="localStorage.clear(); 
+    gameScore.Wins = '0' , gameScore.Draws = '0' , gameScore.Losses = '0' ,displayScore();"
+    >
+      Reset
+    </button>
+
     <script>
       let gameScore = {
         Wins: 0,
-        Draws: 0,
         Losses: 0,
-        displayMatchResult: function () {
-  
-          document.getElementById(
-            "Score-Board"
-          ).innerText = `Score Board:\nWins-${this.Wins},\nDraws-${this.Draws},\nLosses-${this.Losses}`;
-        },
+        Draws: 0,
       };
+      let savedGameScore = localStorage.getItem("gameScore");
+      if (savedGameScore) {
+        gameScore = JSON.parse(savedGameScore);
+      } else {
+        gameScore = {
+          Wins: 0,
+          Losses: 0,
+          Draws: 0,
+        };
+      }
+
+      function displayScore() {
+        document.getElementById(
+          "Score-Board"
+        ).innerText = `Wins: ${gameScore.Wins} , Losses: ${gameScore.Losses} , Draws: ${gameScore.Draws}`;
+      }
+
       function generateComputerChoice() {
         let computerChoice = Math.random() * 3;
         if (computerChoice < 1) {
@@ -109,11 +125,11 @@
         }
       }
       function showResult(userMove, computerMove, result) {
-        
         document.getElementById(
           "result"
         ).innerText = `You chose ${userMove} , Computer chose ${computerMove} , ${result}`;
-        gameScore.displayMatchResult();
+        localStorage.setItem("gameScore", JSON.stringify(gameScore));
+        displayScore();
       }
     </script>
   </body>
