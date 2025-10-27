@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel ="stylesheet" href="style.css">
+    <title>Exercise 1</title>
+</head>
+<body>
+    <h2 id = "Greeting"></h2>
+    <button id = "click-count" style="cursor: pointer;" onclick="clickCount();colorFunction();">click</button>
+    <h2 id = "count-display"></h2>
+    <script>
+        let myTime = new Date();
+        let hours = myTime.getHours();
+        if (hours < 12) {
+            document.getElementById
+        } else if (hours >= 12 && hours < 18) {
+            document.getElementById("Greeting").innerTest = `Good Afternoon`;
+        } else {
+            document.getElementById("Greeting").innerTest = `good Night`;
+        }
+        let count = 0;
+        
+        function clickCount() {
+            count = localStorage.getItem('click'); 
+            count++;
+            localStorage.setItem('click',JSON.stringify(count));
+            
+            document.getElementById("count-display").innerText = `You have clicked ${count} times`;
+            if(count % 2 === 0){
+                document.getElementById("click-count").style.backgroundColor = "blue";
+            } else {
+                document.getElementById("click-count").style.backgroundColor = "green";
+            }
+    
+        }
+       
+    </script>
+</body>
+</html>

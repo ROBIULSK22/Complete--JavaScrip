@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <script>
+        // createing an array
+        let fruits = ["Apple", "Bannana", "Mango"];
+        console.log(fruits);
+        // accessing array elements
+        console.log(fruits[0]); // Apple
+        console.log(fruits[1]); // Bannana
+        console.log(fruits[2]); // Mango
+        // modifying array elements
+        fruits[1] = "Orange";
+        console.log(fruits); // ["Apple", "Orange", "Mango"]
+        // array length
+        console.log(fruits.length); // 3
+        // adding elements to the end of the array
+        fruits.push("Grapes");
+        console.log(fruits); // ["Apple", "Orange", "Mango", "Grapes"]
+        // removing the last element from the array
+        fruits.pop();
+        console.log(fruits); // ["Apple", "Orange", "Mango"]
+        // iterating over the array
+        for (let i = 0; i < fruits.length; i++) {
+            console.log(fruits[i]);
+        }
+        // isArray method
+        console.log(Array.isArray(fruits)); // true
+        let obj = {name: "John", age: 30};
+        console.log(Array.isArray(obj)); // false
+        // multidimensional array
+        let matrix = [
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9]
+        ];
+        console.log(matrix);
+        console.log(matrix[1][2]); // 6
+        // shift method
+        let colors = ["Red", "Green", "Blue"];
+        colors.shift();
+        console.log(colors); // ["Green", "Blue"]
+        // unshift method
+        colors.unshift("Yellow");
+        console.log(colors); // ["Yellow", "Green", "Blue"]
+    </script>
+</body>
+</html>
