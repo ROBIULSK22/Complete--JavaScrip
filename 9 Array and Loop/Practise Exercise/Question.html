@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Question4</title>
+  </head>
+  <body>
+    <script>
+       // Question 4: Create a while loop to count prime number after getting 5 prime number 
+       function isPrime(num){
+        for (let i = 2 ; i <= num ; i++){
+            if(num % i === 0 && i !== num){
+                return false;
+            }
+            
+        }
+        return true;
+       }
+       console.log("First 5 prime numbers are:");
+        let count = 0;
+        let num = 2;
+        while(count < 10){
+            if(isPrime(num)){
+                console.log(num);
+                count++;
+            }
+            num++;
+        }
+
+    </script>
+  </body>
+</html>
